@@ -1,4 +1,5 @@
 import { useTasks } from "@/app/context/tasks/useContext";
+import type { TaskType } from "@/app/context/tasks/tasks.type";
 import { useTimer } from "@/app/context/timer/useContext";
 import { useSettings } from "@/app/context/settings/useContext";
 import { useStats } from "@/app/context/stats/useContext";
@@ -7,10 +8,13 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { FaRegCircle } from "react-icons/fa";
 import { FiX, FiTarget } from "react-icons/fi";
 import { RiFileEditLine } from "react-icons/ri";
-
 import styles from "./style.module.scss";
 
-function Task({ task }) {
+interface TaskProps {
+  task: TaskType;
+}
+
+function Task({ task }: TaskProps) {
   const { state, dispatch } = useTasks();
   const { state: timerState, dispatch: timerDispatch } = useTimer();
   const { settings } = useSettings();

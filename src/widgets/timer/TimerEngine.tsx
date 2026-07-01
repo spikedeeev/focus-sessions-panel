@@ -128,7 +128,7 @@ function TimerEngine() {
       payload: {
         id: crypto.randomUUID(),
         taskId: null,
-        taskTitle: currentTask.title,
+        taskTitle: currentTask!.title,
         startedAt: new Date(Date.now() - durationMs).toISOString(),
         endedAt: nowISO,
         durationMs,

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useState } from "react";
 import { useTasks } from "@/app/context/tasks/useContext";
 import { useNotification } from "@/app/context/notification/useContext";

@@ -1,4 +1,4 @@
-export interface Task {
+export interface TaskType {
   id: string;
   title: string;
   description: string;
@@ -7,7 +7,7 @@ export interface Task {
 }
 
 export interface TasksContextType {
-  tasks: Task[];
+  tasks: TaskType[];
   currentTaskId: string | null;
 
   addTask: (title: string) => void;
@@ -19,7 +19,7 @@ export interface TasksContextType {
 export type TaskFilter = "all" | "active" | "completed";
 
 export interface TasksState {
-  tasks: Task[];
+  tasks: TaskType[];
   currentTaskId: string | null;
   filter: TaskFilter;
   editingTaskId: string | null;

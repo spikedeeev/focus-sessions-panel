@@ -6,7 +6,13 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
 }
 
-function Button({ variant, onClick, children, disabled, type }: ButtonProps) {
+function Button({
+  variant = "filled",
+  onClick,
+  children,
+  disabled,
+  type,
+}: ButtonProps) {
   return (
     <button
       disabled={disabled}

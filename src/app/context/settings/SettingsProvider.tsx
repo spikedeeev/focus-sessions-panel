@@ -33,7 +33,7 @@ export const SettingsProvider = ({
   children: React.ReactNode;
 }) => {
   const [settings, setSettings] = useState(getInitialSettings);
-  const updateSettings = (key, value) => {
+  const updateSettings = (key: any, value: any) => {
     setSettings((prev) => ({
       ...prev,
       [key]: value,

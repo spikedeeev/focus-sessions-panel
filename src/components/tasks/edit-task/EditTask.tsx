@@ -44,7 +44,7 @@ function EditTask() {
     dispatch({
       type: "SAVE_EDIT_TASK",
       payload: {
-        id: task.id,
+        id: task!.id,
         data: {
           title,
           description,

@@ -1,4 +1,4 @@
-import type { TasksState, TaskActions, Task } from "./tasks.type";
+import type { TasksState, TaskActions, TaskType } from "./tasks.type";
 
 export const tasksReducer = (
   state: TasksState,
@@ -6,7 +6,7 @@ export const tasksReducer = (
 ): TasksState => {
   switch (action.type) {
     case "ADD_TASK": {
-      const newTask: Task = {
+      const newTask: TaskType = {
         id: crypto.randomUUID(),
         title: action.payload.title,
         description: "",
