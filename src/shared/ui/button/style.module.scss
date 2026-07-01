@@ -1,0 +1,30 @@
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.filled {
+  background: var(--button-filled);
+  border: 1px solid var(--button-filled);
+  color: var(--color-bg);
+}
+
+.filled:hover {
+  background: var(--button-filled-hover);
+}
+
+.outlined {
+  background: var(--color-bg);
+  border: 1px solid var(--border-color);
+  color: var(--color-primary);
+}
+
+.outlined:hover {
+  background: var(--button-outlined-hover);
+}

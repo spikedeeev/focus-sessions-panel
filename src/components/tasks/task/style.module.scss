@@ -1,0 +1,48 @@
+.content {
+  width: 100%;
+  max-width: 864px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-bg);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+}
+.content button {
+  cursor: pointer;
+}
+
+.content:hover {
+  background: var(--bg-task);
+  border: 1px solid var(--border-task);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title h3 {
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.active h3 {
+  font-size: 16px;
+  color: var(--color-muted-text);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--color-secondary-text);
+}
+
+.description {
+  font-size: 14px;
+  color: var(--color-secondary-text);
+}

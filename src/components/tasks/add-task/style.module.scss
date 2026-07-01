@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.content input {
+  max-width: 800px;
+}
+
+.content button {
+  max-width: 40px;
+  height: 36px;
+}

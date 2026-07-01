@@ -1,0 +1,13 @@
+.input {
+  width: 100%;
+  background-color: var(--bg-input);
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--bg-input);
+  color: var(--color-primary);
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: var(--input-text);
+}
