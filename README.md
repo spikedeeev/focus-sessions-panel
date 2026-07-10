@@ -1,73 +1,120 @@
-# React + TypeScript + Vite
+# Focus Session Dashboard ⏱️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A productivity application for planning tasks, running focus sessions (Pomodoro technique), and tracking productivity statistics.
 
-Currently, two official plugins are available:
+The application works entirely on the client side and stores all user data locally, allowing users to continue their workflow after refreshing or reopening the application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+# ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📋 Task Management
 
-## Expanding the ESLint configuration
+Create and manage your daily tasks:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Add new tasks
+  - Required task title
+  - Optional description
+- Edit task information
+- Mark tasks as completed or active
+- Delete tasks
+- Select a task for the current focus session
+- Search tasks by title
+- Filter tasks by status:
+  - All
+  - Active
+  - Completed
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Each task displays:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Task title
+- Description (if available)
+- Completion status
+- Indicator if the task is selected for the current focus session
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# ⏱️ Focus Sessions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+A Pomodoro-style timer designed to help users stay focused and improve productivity.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Timer Controls
+
+Users can:
+
+- ▶️ Start a focus session
+- ⏸ Pause the timer
+- 🔄 Reset the timer
+- ⏭ Skip the current phase
+
+A task must be selected before starting a focus session.
+
+---
+
+
+---
+
+# 🤖 Automatic Behavior
+
+When a focus session is completed:
+
+- The completed sessions counter increases
+- A new history record is created
+- Task statistics are updated
+- A break starts automatically if enabled
+
+When a break finishes:
+
+- The next focus session starts automatically if enabled
+
+---
+
+# 📊 Statistics
+
+Track productivity progress and review previous sessions.
+
+## Available Metrics
+
+- Completed sessions today
+- Total completed sessions
+- Completed tasks count
+- Recent session history
+
+Each history item contains:
+
+- Task name
+- Session start time
+- Session end time
+- Duration
+- Session type:
+  - Focus
+  - Break
+
+---
+
+# ⚙️ Settings
+
+Customize timer behavior and application preferences.
+
+## Timer Settings
+
+Users can configure:
+
+- Focus session duration
+- Short break duration
+- Long break duration
+- Number of focus sessions before a long break
+
+## Automation Settings
+
+Available options:
+
+- Auto-start breaks
+- Auto-start next focus session
+
+All changes are saved automatically and restored when the application starts.
+
+
+
+
+
