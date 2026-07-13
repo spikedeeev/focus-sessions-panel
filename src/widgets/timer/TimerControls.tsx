@@ -69,6 +69,7 @@ function TimerControls() {
         });
         break;
     }
+
   };
   return (
     <div className={styles.actions}>

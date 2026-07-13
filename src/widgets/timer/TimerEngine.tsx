@@ -5,6 +5,7 @@ import { useStats } from "@/app/context/stats/useContext";
 import { useTimer } from "@/app/context/timer/useContext";
 import { useTasks } from "@/app/context/tasks/useContext";
 import { useSettings } from "@/app/context/settings/useContext";
+import { playEndSound, playStartSound } from "@/shared/lib/sound";
 
 function TimerEngine() {
   const [now, setNow] = useState(Date.now());
@@ -17,6 +18,7 @@ function TimerEngine() {
   const currentTask = tasksState.tasks.find(
     (task) => task.id === tasksState.currentTaskId,
   );
+  const startSoundEnabled = !settings.autoStartBreak && !settings.autoStartFocus;
   const timeLeft = useMemo(() => {
     if (!timerState.isRunning || !timerState.endTime) {
       return timerState.remainingMs;
@@ -58,6 +60,7 @@ function TimerEngine() {
     if (!timerState.isRunning) return;
     if (timeLeft > 0) return;
 
+    playEndSound();
     const nowISO = new Date().toISOString();
 
     if (timerState.mode === "focus") {
@@ -106,6 +109,10 @@ function TimerEngine() {
         },
       });
 
+      if (startSoundEnabled) {
+        playStartSound();
+      }
+
       notificationDispatch({
         type: "SHOW",
         payload:
@@ -143,6 +150,10 @@ function TimerEngine() {
         durationMs,
       },
     });
+
+    if (startSoundEnabled) {
+      playStartSound();
+    }
 
     notificationDispatch({
       type: "SHOW",
