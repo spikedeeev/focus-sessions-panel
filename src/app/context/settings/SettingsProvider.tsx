@@ -19,7 +19,7 @@ const getInitialSettings = (): Settings => {
   try {
     return JSON.parse(saved) as Settings;
   } catch (error) {
-    console.error("Ошибка чтения settings из localStorage:", error);
+    console.error("Failed to read settings from localStorage:", error);
 
     localStorage.removeItem("settings");
 

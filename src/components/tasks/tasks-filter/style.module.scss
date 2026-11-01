@@ -1,7 +1,25 @@
 .content {
   display: flex;
   gap: 8px;
+  flex-shrink: 0;
 }
+
 .content button {
-  max-width: 122px;
+  width: auto;
+  max-width: none;
+  padding: 9px 13px;
+  border-radius: 10px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 430px) {
+  .content {
+    gap: 6px;
+  }
+
+  .content button {
+    padding: 8px 9px;
+    font-size: 11px;
+  }
 }

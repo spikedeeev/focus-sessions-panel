@@ -57,7 +57,7 @@ function Task({ task }: TaskProps) {
       payload: { id: task.id },
     });
 
-    notificationDispatch({ type: "SHOW", payload: "Задача удалена!" });
+    notificationDispatch({ type: "SHOW", payload: "Task deleted!" });
     if (isCurrent) {
       timerDispatch({
         type: "RESET",
@@ -102,7 +102,7 @@ function Task({ task }: TaskProps) {
           )}
 
           <div className={styles.completed}>
-            {task.sessionsCompleted} сессий
+            {task.sessionsCompleted} sessions
           </div>
         </div>
       </div>

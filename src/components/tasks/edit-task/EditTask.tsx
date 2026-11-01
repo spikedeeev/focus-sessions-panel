@@ -52,7 +52,7 @@ function EditTask() {
       },
     });
 
-    notificationDispatch({ type: "SHOW", payload: "Задача обновлена!" });
+    notificationDispatch({ type: "SHOW", payload: "Task updated!" });
   };
 
   if (!task) return null;
@@ -64,22 +64,22 @@ function EditTask() {
     >
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Редактировать задачу</h2>
+          <h2 className={styles.title}>Edit task</h2>
           <button onClick={() => dispatch({ type: "CLOSE_EDIT_TASK" })}>
             <FiX color="#0A0A0A" size={16} />
           </button>
         </div>
         <div className={styles.edit}>
           <label>
-            Название
+            Title
             <Input value={title} onChange={(e) => setTitle(e.target.value)} />
           </label>
           <label>
-            Описание
+            Description
             <Input
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Добавить описание задачи..."
+              placeholder="Add a task description..."
             />
           </label>
         </div>
@@ -88,10 +88,10 @@ function EditTask() {
             variant="outlined"
             onClick={() => dispatch({ type: "CLOSE_EDIT_TASK" })}
           >
-            Отмена
+            Cancel
           </Button>
           <Button variant="filled" onClick={handleSave}>
-            Сохранить
+            Save
           </Button>
         </div>
       </div>

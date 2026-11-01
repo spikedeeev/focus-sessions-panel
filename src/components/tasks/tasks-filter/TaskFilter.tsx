@@ -6,9 +6,9 @@ import type { TaskFilter } from "@/app/context/tasks/tasks.type";
 function TasksFilter() {
   const { state, dispatch } = useTasks();
   const filters: { value: TaskFilter; label: string }[] = [
-    { value: "all", label: "Все" },
-    { value: "active", label: "Активные" },
-    { value: "completed", label: "Выполненные" },
+    { value: "all", label: "All" },
+    { value: "active", label: "Active" },
+    { value: "completed", label: "Completed" },
   ];
   return (
     <div className={styles.content}>

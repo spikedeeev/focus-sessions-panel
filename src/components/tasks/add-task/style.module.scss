@@ -1,14 +1,20 @@
 .content {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
 }
 
 .content input {
-  max-width: 800px;
+  max-width: none;
+  min-height: 47px;
 }
 
 .content button {
-  max-width: 40px;
-  height: 36px;
+  width: 47px;
+  min-width: 47px;
+  height: 47px;
+  border-radius: 14px;
+  font-size: 24px;
+  line-height: 1;
+  box-shadow: 0 7px 15px rgba(40, 98, 71, 0.19);
 }

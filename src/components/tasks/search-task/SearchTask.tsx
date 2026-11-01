@@ -8,7 +8,7 @@ function SearchTask() {
   return (
     <div className={styles.content}>
       <Input
-        placeholder="Найти задачу"
+        placeholder="Search tasks"
         value={state.search}
         onChange={(e) => {
           dispatch({

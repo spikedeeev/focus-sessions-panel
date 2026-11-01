@@ -2,16 +2,29 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
+  margin-top: 25px;
 }
+
 .actions button {
-  min-width: 100px;
-  max-width: 140px;
+  width: auto;
+  min-width: 112px;
+  max-width: 180px;
+  min-height: 43px;
+  padding: 0 17px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
 }
+
+.actions button:nth-child(2) {
+  min-width: 43px;
+  padding: 0;
+}
+
 .buttonContent {
   display: flex;
   align-items: center;
@@ -19,7 +32,100 @@
   justify-content: center;
 }
 
+.timerWrap {
+  position: relative;
+  width: 216px;
+  height: 216px;
+  margin-top: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 78%, #f4f9f5 100%);
+  box-shadow:
+    0 0 0 10px rgba(235, 244, 236, 0.68),
+    0 14px 36px rgba(40, 98, 71, 0.08);
+}
+
+.running {
+  animation: breathe 3.2s ease-in-out infinite;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.track,
+.progress {
+  fill: none;
+  stroke-width: 10;
+}
+
+.track {
+  stroke: #e3ece5;
+}
+
+.progress {
+  stroke: var(--button-filled);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 300ms linear;
+  filter: drop-shadow(0 0 6px rgba(40, 98, 71, 0.35));
+}
+
 .timer {
+  position: relative;
   color: var(--color-primary);
-  font-size: clamp(24px, 4vw, 96px);
+  font-size: 55px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.07em;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 10px rgba(235, 244, 236, 0.68),
+      0 14px 36px rgba(40, 98, 71, 0.08);
+  }
+  50% {
+    box-shadow:
+      0 0 0 16px rgba(220, 236, 224, 0.62),
+      0 18px 46px rgba(40, 98, 71, 0.16);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .running {
+    animation: none;
+  }
+
+  .progress {
+    transition: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .timerWrap {
+    width: 190px;
+    height: 190px;
+  }
+
+  .timer {
+    font-size: 48px;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+
+  .actions button {
+    min-width: 100px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
 }

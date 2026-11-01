@@ -1,11 +1,19 @@
 .input {
   width: 100%;
+  min-height: 42px;
   background-color: var(--bg-input);
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--bg-input);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #e9eeea;
   color: var(--color-primary);
   font-size: 14px;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.input:focus {
+  background: #fff;
+  border-color: #9dc5a8;
+  box-shadow: 0 0 0 3px rgba(66, 126, 82, 0.09);
 }
 
 .input::placeholder {

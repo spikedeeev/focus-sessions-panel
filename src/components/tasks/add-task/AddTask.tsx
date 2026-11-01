@@ -22,7 +22,7 @@ function AddTask() {
       },
     });
 
-    notificationDispatch({ type: "SHOW", payload: "Задача создана!" });
+    notificationDispatch({ type: "SHOW", payload: "Task created!" });
     setTitle("");
   };
 
@@ -31,7 +31,7 @@ function AddTask() {
       <Input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="Добавить новую задачу..."
+        placeholder="Add a new task..."
       />
 
       <Button variant="filled" type="submit">

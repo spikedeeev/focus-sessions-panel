@@ -32,7 +32,7 @@ export const TimerProvider = ({ children }: { children: React.ReactNode }) => {
         endTime: null,
       };
     } catch (error) {
-      console.error("Ошибка чтения timer из localStorage:", error);
+      console.error("Failed to read timer from localStorage:", error);
 
       localStorage.removeItem("timer");
 

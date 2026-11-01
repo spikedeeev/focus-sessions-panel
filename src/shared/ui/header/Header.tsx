@@ -8,47 +8,61 @@ import styles from "./style.module.scss";
 function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.title}>
-        <h1>Фокус-сессии</h1>
-      </div>
+      <div className={styles.inner}>
+        <div className={styles.brand}>
+          <span className={styles.brandMark}>
+            <img src={focus} alt="" />
+          </span>
+          <div className={styles.brandText}>
+            <h1>Quiet Focus</h1>
+            <span>space to get things done</span>
+          </div>
+        </div>
 
-      <div className={styles.content}>
-        <nav className={styles.navigation}>
+        <nav className={styles.navigation} aria-label="Main navigation">
           <NavLink
             to="/"
             end
+            aria-label="Tasks"
             className={({ isActive }) =>
-              `${styles.logoLink} ${isActive ? styles.active : ""}`
+              `${styles.navLink} ${isActive ? styles.active : ""}`
             }
           >
-            <img className={styles.logoImg} src={home} alt="tasks" />
+            <img className={styles.logoImg} src={home} alt="" />
+            <span>Tasks</span>
           </NavLink>
 
           <NavLink
             to="/session"
+            aria-label="Focus"
             className={({ isActive }) =>
-              `${styles.logoLink} ${isActive ? styles.active : ""}`
+              `${styles.navLink} ${isActive ? styles.active : ""}`
             }
           >
-            <img className={styles.logoImg} src={focus} alt="focus session" />
+            <img className={styles.logoImg} src={focus} alt="" />
+            <span>Focus</span>
           </NavLink>
 
           <NavLink
             to="/statistic"
+            aria-label="Statistics"
             className={({ isActive }) =>
-              `${styles.logoLink} ${isActive ? styles.active : ""}`
+              `${styles.navLink} ${isActive ? styles.active : ""}`
             }
           >
-            <img className={styles.logoImg} src={statistic} alt="statistic" />
+            <img className={styles.logoImg} src={statistic} alt="" />
+            <span>Statistics</span>
           </NavLink>
 
           <NavLink
             to="/options"
+            aria-label="Settings"
             className={({ isActive }) =>
-              `${styles.logoLink} ${isActive ? styles.active : ""}`
+              `${styles.navLink} ${isActive ? styles.active : ""}`
             }
           >
-            <img className={styles.logoImg} src={options} alt="options" />
+            <img className={styles.logoImg} src={options} alt="" />
+            <span>Settings</span>
           </NavLink>
         </nav>
       </div>

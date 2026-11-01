@@ -34,7 +34,7 @@ function TasksList() {
           ))}
         </div>
       ) : (
-        <h2 className={styles.title}>Нет задач</h2>
+        <h2 className={styles.title}>No tasks yet</h2>
       )}
     </div>
   );

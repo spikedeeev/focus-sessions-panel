@@ -80,7 +80,7 @@ function TimerEngine() {
           taskId: tasksState.currentTaskId,
           taskTitle:
             tasksState.tasks.find((t) => t.id === tasksState.currentTaskId)
-              ?.title ?? "Без задачи",
+              ?.title ?? "No task",
           startedAt: new Date(Date.now() - durationMs).toISOString(),
           endedAt: nowISO,
           durationMs,
@@ -117,8 +117,8 @@ function TimerEngine() {
         type: "SHOW",
         payload:
           nextMode === "longBreak"
-            ? "Фокус-сессия завершена. Начинается длинный перерыв."
-            : "Фокус-сессия завершена. Начинается короткий перерыв.",
+            ? "Focus session complete. Time for a long break."
+            : "Focus session complete. Time for a short break.",
       });
 
       if (settings.autoStartBreak) {
@@ -157,7 +157,7 @@ function TimerEngine() {
 
     notificationDispatch({
       type: "SHOW",
-      payload: "Перерыв завершён!",
+      payload: "Break complete!",
     });
 
     if (settings.autoStartFocus) {

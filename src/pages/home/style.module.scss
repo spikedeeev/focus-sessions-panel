@@ -1,9 +1,8 @@
 .wrapper {
   width: 100%;
-  max-width: 1114px;
+  max-width: 1160px;
   margin: 0 auto;
-  margin-top: 80px 0;
-  padding: 0 35px;
+  padding: 46px 32px 72px;
 }
 
 .content {
@@ -12,7 +11,235 @@
   gap: 25px;
 }
 
-.title h2 {
-  font-size: 16px;
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 270px;
+  padding: 35px 42px;
+  border: 1px solid rgba(220, 232, 223, 0.9);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 87% 45%, rgba(216, 235, 220, 0.76), transparent 16rem),
+    linear-gradient(115deg, #fff 4%, #f8fbf8 73%, #eff6f0);
+  box-shadow: var(--shadow-card);
+}
+
+.eyebrow,
+.panelEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--color-green);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #75ad82;
+  box-shadow: 0 0 0 4px rgba(117, 173, 130, 0.13);
+}
+
+.hero h2 {
+  position: relative;
+  z-index: 1;
+  margin-top: 21px;
   color: var(--color-primary);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 1.08;
+}
+
+.hero h2 span {
+  color: var(--color-green);
+}
+
+.hero p {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  margin-top: 13px;
+  color: var(--color-secondary-text);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.summary {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  margin-top: 24px;
+}
+
+.summaryItem {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  color: var(--color-secondary-text);
+  font-size: 12px;
+}
+
+.summaryValue {
+  color: var(--color-primary);
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+}
+
+.summaryDivider {
+  width: 1px;
+  height: 19px;
+  background: #dce5de;
+}
+
+.heroDecoration {
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  width: 205px;
+  height: 205px;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+}
+
+.decorationRing {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(83, 133, 98, 0.15);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 19px rgba(255, 255, 255, 0.28),
+    0 0 0 39px rgba(83, 133, 98, 0.06);
+}
+
+.decorationLeaf {
+  width: 93px;
+  height: 93px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(74, 128, 88, 0.16);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.67);
+  color: #528264;
+  font-size: 44px;
+  box-shadow: 0 14px 35px rgba(45, 93, 59, 0.11);
+  transform: rotate(-8deg);
+}
+
+.taskPanel {
+  padding: 28px;
+  border: 1px solid #e8ede9;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-card);
+}
+
+.panelHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.panelHeading > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.panelEyebrow {
+  color: #95a399;
+  font-size: 9px;
+}
+
+.panelHeading h3 {
+  color: var(--color-primary);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+.taskCount {
+  padding: 8px 11px;
+  border: 1px solid #e2ece4;
+  border-radius: 999px;
+  background: #f5f9f5;
+  color: var(--color-green);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.taskTools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 18px 0 14px;
+}
+
+.hiddenContent {
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    padding: 28px 18px 52px;
+  }
+
+  .hero {
+    min-height: 250px;
+    padding: 28px;
+  }
+
+  .heroDecoration {
+    right: -55px;
+    opacity: 0.5;
+  }
+
+  .taskPanel {
+    padding: 22px 18px;
+  }
+
+  .taskTools {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 430px) {
+  .wrapper {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .hero {
+    padding: 25px 21px;
+    border-radius: 20px;
+  }
+
+  .heroDecoration {
+    right: -95px;
+    opacity: 0.25;
+  }
+
+  .hero h2 {
+    font-size: 34px;
+  }
+
+  .taskPanel {
+    padding: 19px 14px;
+    border-radius: 18px;
+  }
 }

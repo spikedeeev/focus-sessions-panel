@@ -33,11 +33,11 @@ function Settings() {
 
   return (
     <div className={styles.settings}>
-      <h3 className={styles.title}>Длительность (секунды)</h3>
+      <h3 className={styles.title}>Session durations (minutes)</h3>
 
       <div className={styles.inputs}>
         <div className={styles.field}>
-          <label>Фокус</label>
+          <label>Focus</label>
 
           <Input
             value={settings.focusDuration}
@@ -47,13 +47,13 @@ function Settings() {
               updateSettings("focusDuration", value);
               syncTimerIfNeeded("focus", value);
 
-              notify("Время фокус-сессии обновлено");
+              notify("Focus session duration updated");
             }}
           />
         </div>
 
         <div className={styles.field}>
-          <label>Перерыв</label>
+          <label>Short break</label>
 
           <Input
             value={settings.shortBreakDuration}
@@ -63,13 +63,13 @@ function Settings() {
               updateSettings("shortBreakDuration", value);
               syncTimerIfNeeded("shortBreak", value);
 
-              notify("Время короткого перерыва обновлено");
+              notify("Short break duration updated");
             }}
           />
         </div>
 
         <div className={styles.field}>
-          <label>Длинный</label>
+          <label>Long break</label>
 
           <Input
             value={settings.longBreakDuration}
@@ -79,14 +79,14 @@ function Settings() {
               updateSettings("longBreakDuration", value);
               syncTimerIfNeeded("longBreak", value);
 
-              notify("Время длинного перерыва обновлено");
+              notify("Long break duration updated");
             }}
           />
         </div>
       </div>
 
       <div className={styles.card}>
-        <span>Сессий до длинного перерыва</span>
+        <span>Sessions before a long break</span>
 
         <Input
           value={settings.sessionsBeforeLongBreak}
@@ -94,15 +94,15 @@ function Settings() {
             const value = +e.target.value;
 
             updateSettings("sessionsBeforeLongBreak", value);
-            notify("Количество сессий до длинного перерыва изменено");
+            notify("Sessions before a long break updated");
           }}
         />
       </div>
 
-      <h3 className={styles.title}>Автоматизация</h3>
+      <h3 className={styles.title}>Automation</h3>
 
       <div className={styles.card}>
-        <span>Автостарт перерыва</span>
+        <span>Auto-start breaks</span>
 
         <Switch
           checked={settings.autoStartBreak}
@@ -111,15 +111,15 @@ function Settings() {
 
             notify(
               e.target.checked
-                ? "Автостарт перерывов включён"
-                : "Автостарт перерывов выключен",
+                ? "Break auto-start enabled"
+                : "Break auto-start disabled",
             );
           }}
         />
       </div>
 
       <div className={styles.card}>
-        <span>Автостарт фокус-сессии</span>
+        <span>Auto-start focus sessions</span>
 
         <Switch
           checked={settings.autoStartFocus}
@@ -128,8 +128,8 @@ function Settings() {
 
             notify(
               e.target.checked
-                ? "Автостарт фокуса включён"
-                : "Автостарт фокуса выключен",
+                ? "Focus auto-start enabled"
+                : "Focus auto-start disabled",
             );
           }}
         />

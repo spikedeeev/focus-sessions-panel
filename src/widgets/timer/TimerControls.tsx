@@ -80,12 +80,12 @@ function TimerControls() {
         {state.isRunning ? (
           <>
             <IoIosPause />
-            Пауза
+            Pause
           </>
         ) : (
           <>
             <VscDebugStart />
-            Старт
+            Start
           </>
         )}
       </Button>
@@ -94,7 +94,7 @@ function TimerControls() {
         <VscDebugRestart />
       </Button>
       <Button onClick={() => skipPhase()} variant="filled">
-        Пропустить фазу
+        Skip phase
       </Button>
     </div>
   );

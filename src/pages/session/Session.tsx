@@ -11,28 +11,39 @@ function Session() {
   );
   const sessionMode =
     timerState.mode === "focus"
-      ? "Фокус-сессия"
+      ? "Focus session"
       : timerState.mode === "shortBreak"
-        ? "Короткий перерыв"
-        : "Длинный перерыв";
+        ? "Short break"
+        : "Long break";
   return (
     <div className={styles.wrapper}>
-      <div className={styles.title}>
-        <h2>{sessionMode}</h2>
-      </div>
-
-      {!tasksState.currentTaskId ? (
-        <span className={styles.subtitle}>Выберите задачу</span>
-      ) : (
-        <div className={styles.task}>
-          <span className={styles.taskTitle}>{currentTask?.title}</span>
-          <span className={styles.taskDesc}>{currentTask?.description}</span>
+      <div className={styles.sessionCard}>
+        <div className={styles.eyebrow}>
+          <span className={styles.statusDot} />
+          TIME FOR YOURSELF
         </div>
-      )}
 
-      <Timer />
-      <div className={styles.info}>
-        Сессий завершено: {timerState.completedSessions}
+        <div className={styles.title}>
+          <h2>{sessionMode}</h2>
+        </div>
+
+        {!tasksState.currentTaskId ? (
+          <span className={styles.subtitle}>Choose a task to get started</span>
+        ) : (
+          <div className={styles.task}>
+            <span className={styles.taskTitle}>{currentTask?.title}</span>
+            <span className={styles.taskDesc}>{currentTask?.description}</span>
+          </div>
+        )}
+
+        <Timer />
+
+        <div className={styles.info}>
+          <span className={styles.sessionCount}>
+            {timerState.completedSessions}
+          </span>
+          <span>sessions completed</span>
+        </div>
       </div>
     </div>
   );

@@ -17,21 +17,21 @@ function Statistic() {
   ).length;
 
   const cards = [
-    { value: sessionsToday, title: "Сегодня" },
-    { value: state.totalSessions, title: "Всего сессий" },
-    { value: state.completedTasks, title: "Выполнено задач" },
+    { value: sessionsToday, title: "Today" },
+    { value: state.totalSessions, title: "Total sessions" },
+    { value: state.completedTasks, title: "Tasks completed" },
   ];
 
   const getTypeLabel = (type: string) => {
     switch (type) {
       case "focus":
-        return "Фокус";
+        return "Focus";
 
       case "shortBreak":
-        return "Короткий перерыв";
+        return "Short break";
 
       case "longBreak":
-        return "Длинный перерыв";
+        return "Long break";
 
       default:
         return type;
@@ -40,7 +40,7 @@ function Statistic() {
 
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>Статистика</h2>
+      <h2 className={styles.title}>Statistics</h2>
 
       <div className={styles.cards}>
         {cards.map((card) => (
@@ -52,10 +52,10 @@ function Statistic() {
       </div>
 
       <div className={styles.content}>
-        <h2 className={styles.title}>История</h2>
+        <h2 className={styles.title}>History</h2>
 
         {state.history.length === 0 ? (
-          <h3 className={styles.alert}>Нет завершённых сессий</h3>
+          <h3 className={styles.alert}>No completed sessions yet</h3>
         ) : (
           <div className={styles.history}>
             {state.history.map((session) => (
@@ -64,24 +64,24 @@ function Statistic() {
                   <h3 className={styles.taskTitle}>{session.taskTitle}</h3>
 
                   <div className={styles.type}>
-                    <span>Тип:</span> {getTypeLabel(session.type)}
+                    <span>Type:</span> {getTypeLabel(session.type)}
                   </div>
                 </div>
 
                 <div className={styles.right}>
                   <div className={styles.info}>
-                    <span>Начало:</span>{" "}
+                    <span>Started:</span>{" "}
                     {new Date(session.startedAt).toLocaleString("ru-RU")}
                   </div>
 
                   <div className={styles.info}>
-                    <span>Конец:</span>{" "}
+                    <span>Ended:</span>{" "}
                     {new Date(session.endedAt).toLocaleString("ru-RU")}
                   </div>
 
                   <div className={styles.info}>
-                    <span>Длительность:</span>{" "}
-                    {Math.round(session.durationMs / 60000)} мин
+                    <span>Duration:</span>{" "}
+                    {Math.round(session.durationMs / 60000)} min
                   </div>
                 </div>
               </div>

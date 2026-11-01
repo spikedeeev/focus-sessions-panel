@@ -12,7 +12,7 @@ function Options() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
-        <h2>Настройки</h2>
+        <h2>Settings</h2>
       </div>
       <Settings />
       <Notification />

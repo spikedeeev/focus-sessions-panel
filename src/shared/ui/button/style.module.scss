@@ -1,22 +1,26 @@
 .button {
   cursor: pointer;
   border: none;
-  border-radius: 8px;
+  border-radius: 11px;
   width: 100%;
-  padding: 5px 0;
+  min-height: 40px;
+  padding: 8px 14px;
   font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .filled {
   background: var(--button-filled);
   border: 1px solid var(--button-filled);
   color: var(--color-bg);
+  box-shadow: 0 4px 11px rgba(40, 98, 71, 0.12);
 }
 
 .filled:hover {
   background: var(--button-filled-hover);
+  border-color: var(--button-filled-hover);
+  transform: translateY(-1px);
 }
 
 .outlined {
@@ -27,4 +31,5 @@
 
 .outlined:hover {
   background: var(--button-outlined-hover);
+  border-color: #d6e2d9;
 }

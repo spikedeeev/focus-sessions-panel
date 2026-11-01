@@ -1,48 +1,77 @@
 .settings {
   width: 100%;
+  max-width: 780px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 14px;
 }
 
 .title {
-  font-size: 16px;
-  color: var(--color-primary);
+  margin-top: 10px;
+  color: #78867e;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .inputs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
+  padding: 19px;
+  border: 1px solid #e7ede8;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow-card);
 }
+
 .inputs input {
-  max-width: 162px;
+  max-width: 180px;
 }
+
 .field {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
+
 .field label {
-  font-weight: 600;
-  font-size: 14px;
+  color: #57665c;
+  font-size: 12px;
+  font-weight: 650;
 }
 
 .card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-  background-color: var(--color-bg);
-  padding: 15px;
+  gap: 15px;
+  min-height: 62px;
+  border-radius: 14px;
+  border: 1px solid #e7ede8;
+  background-color: #fff;
+  padding: 14px 18px;
+  box-shadow: var(--shadow-card);
 }
 
 .card input {
-  max-width: 80px;
+  max-width: 92px;
+  text-align: center;
 }
 
 .card span {
+  color: var(--color-primary);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .inputs {
+    flex-direction: column;
+  }
+
+  .inputs input {
+    max-width: none;
+  }
 }

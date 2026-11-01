@@ -19,7 +19,7 @@ const getInitialState = (): TasksState => {
   try {
     return JSON.parse(saved) as TasksState;
   } catch (error) {
-    console.error("Ошибка чтения tasks из localStorage:", error);
+    console.error("Failed to read tasks from localStorage:", error);
 
     localStorage.removeItem("tasks");
 
